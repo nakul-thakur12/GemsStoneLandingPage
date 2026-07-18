@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navratna — Certified Gemstones, Crystals &amp; Rudraksha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #ffffff;
+    --panel: #f6f4f0;
+    --panel-2: #efece5;
+    --ink: #1c1a17;
+    --muted: #6f6a63;
+    --muted-2: #9a948b;
+    --line: #e7e3db;
+    --emerald: #0f5c46;
+    --emerald-dark: #0b4735;
+    --gold: #a8791a;
+    --gold-soft: #c99a2e;
+    --ruby: #9c2540;
+    --ivory: #fbfaf7;
+    --display: 'Fraunces', serif;
+    --body: 'Manrope', sans-serif;
+    --mono: 'Space Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--body);
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer; background:none; border:none;}
+  input,select{font-family:inherit;}
+  :focus-visible{outline:2px solid var(--emerald); outline-offset:2px;}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 18px;} }
+  section[id]{scroll-margin-top:132px;}
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{background:var(--emerald-dark); color:#eef4f1;}
+  .topbar-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; padding:8px 0; color:#cfe3da;
+  }
+  .topbar a{color:#f2e6c8; font-weight:600;}
+  .topbar-inner span{display:flex; align-items:center; gap:8px;}
+  @media (max-width:700px){ .topbar-inner{font-size:11px;} .topbar-inner .hide-sm{display:none;} }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:200; background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{display:flex; align-items:center; gap:28px; padding:18px 0;}
+  .logo{
+    font-family:var(--display); font-weight:700; font-size:23px; letter-spacing:.01em;
+    display:flex; align-items:center; gap:9px; color:var(--emerald-dark); flex-shrink:0;
+  }
+  .logo .mark{width:20px; height:20px;}
+  .search-bar{
+    flex:1; display:flex; align-items:center; gap:10px;
+    background:var(--panel); border:1px solid var(--line); border-radius:3px;
+    padding:11px 16px; max-width:440px;
+  }
+  .search-bar svg{width:17px; height:17px; color:var(--muted-2); flex-shrink:0;}
+  .search-bar input{flex:1; background:none; border:none; font-size:14px; color:var(--ink); width:100%;}
+  .search-bar input:focus{outline:none;}
+  .search-bar input::placeholder{color:var(--muted-2);}
+  .header-nav{display:flex; gap:26px; font-size:14px; font-weight:600; margin-left:auto;}
+  .header-nav a{color:var(--ink); padding:6px 0; border-bottom:2px solid transparent; transition:border-color .2s ease, color .2s ease;}
+  .header-nav a:hover, .header-nav a.active{color:var(--emerald-dark); border-color:var(--emerald-dark);}
+  .header-icons{display:flex; align-items:center; gap:20px; margin-left:8px;}
+  .icon-btn{position:relative; width:22px; height:22px; color:var(--ink); flex-shrink:0; transition:color .2s ease, transform .2s ease;}
+  .icon-btn:hover{color:var(--emerald-dark); transform:translateY(-1px);}
+  .icon-btn svg{width:100%; height:100%;}
+  .icon-btn svg.filled{fill:var(--ruby); stroke:var(--ruby);}
+  .badge{
+    position:absolute; top:-8px; right:-9px; background:var(--ruby); color:#fff;
+    font-size:10px; font-weight:700; width:16px; height:16px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    transition:transform .2s ease;
+  }
+  .badge.bump{animation:bump .35s ease;}
+  @keyframes bump{ 0%{transform:scale(1);} 40%{transform:scale(1.4);} 100%{transform:scale(1);} }
+  .hamburger{display:none; width:24px; height:24px; color:var(--ink);}
+  @media (max-width:960px){
+    .header-nav{
+      display:none; position:absolute; top:100%; left:0; right:0; background:#fff;
+      flex-direction:column; gap:0; border-bottom:1px solid var(--line); padding:6px 32px 14px;
+    }
+    .header-nav.open{display:flex;}
+    .header-nav a{padding:12px 0; border-bottom:1px solid var(--line); border-bottom-width:1px !important;}
+    .header-nav a.active{border-color:var(--line); }
+    .search-bar{max-width:none;}
+    .hamburger{display:block; margin-left:6px;}
+  }
+  @media (max-width:640px){
+    .search-bar{display:none;}
+  }
+
+  .cat-strip{border-bottom:1px solid var(--line); background:var(--ivory);}
+  .cat-strip-inner{display:flex; gap:10px; padding:14px 0; overflow-x:auto; scrollbar-width:none;}
+  .cat-strip-inner::-webkit-scrollbar{display:none;}
+  .chip{
+    white-space:nowrap; font-size:13px; font-weight:600; padding:9px 18px;
+    border:1px solid var(--line); border-radius:20px; color:var(--muted);
+    transition:all .2s ease; flex-shrink:0; background:#fff;
+  }
+  .chip:hover{border-color:var(--emerald-dark); color:var(--emerald-dark);}
+  .chip.active{background:var(--emerald-dark); border-color:var(--emerald-dark); color:#fff;}
+
+  /* ---------- TOAST ---------- */
+  .toast{
+    position:fixed; bottom:26px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--ink); color:#fff; padding:13px 24px; border-radius:30px; font-size:13.5px; font-weight:600;
+    display:flex; align-items:center; gap:10px; opacity:0; pointer-events:none; transition:opacity .3s ease, transform .3s ease;
+    z-index:999; box-shadow:0 14px 30px rgba(0,0,0,0.2);
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  .toast svg{width:16px; height:16px; color:#8fe0b8; flex-shrink:0;}
+
+  /* ---------- HERO BANNER ---------- */
+  .hero{padding:36px 0 6px;}
+  .hero-banner{
+    background:linear-gradient(120deg, var(--emerald-dark) 0%, var(--emerald) 62%, #1c7a5c 100%);
+    border-radius:8px; padding:52px 56px; color:#fff;
+    display:grid; grid-template-columns:1.2fr 0.8fr; align-items:center; gap:30px;
+    position:relative; overflow:hidden;
+  }
+  .hero-banner::after{
+    content:""; position:absolute; width:340px; height:340px; border-radius:50%;
+    background:radial-gradient(circle, rgba(201,154,46,0.22), transparent 65%);
+    top:-120px; right:-60px;
+  }
+  .hero-banner .eyebrow{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:#f0d27a; margin-bottom:14px;
+  }
+  .hero-banner h1{
+    font-family:var(--display); font-weight:600; font-size:clamp(28px,3.6vw,42px); line-height:1.15;
+    margin-bottom:16px; max-width:480px;
+  }
+  .hero-banner p{color:#d7e8e0; max-width:420px; margin-bottom:22px; font-size:15px;}
+  .countdown{display:flex; gap:10px; margin-bottom:26px;}
+  .countdown div{
+    background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22); border-radius:5px;
+    padding:8px 12px; text-align:center; min-width:56px;
+  }
+  .countdown b{display:block; font-family:var(--display); font-size:19px; font-weight:700;}
+  .countdown span{font-size:9.5px; font-family:var(--mono); letter-spacing:.06em; color:#cfe7db; text-transform:uppercase;}
+  .hero-banner .btn-white{
+    display:inline-flex; align-items:center; gap:9px; background:#fff; color:var(--emerald-dark);
+    font-weight:700; font-size:14px; padding:13px 26px; border-radius:3px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .hero-banner .btn-white:hover{transform:translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,0.25);}
+  .hero-banner .btn-white svg{width:15px; height:15px;}
+  .hero-gems{position:relative; height:220px;}
+  .hero-gems svg{position:absolute; filter:drop-shadow(0 16px 26px rgba(0,0,0,0.25));}
+  .hg1{width:120px; top:0; right:30%;}
+  .hg2{width:90px; top:60px; right:0;}
+  .hg3{width:80px; bottom:0; right:48%;}
+  @media (max-width:860px){
+    .hero-banner{grid-template-columns:1fr; padding:38px 26px;}
+    .hero-gems{display:none;}
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section{padding:56px 0;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:26px; gap:16px; flex-wrap:wrap;}
+  .section-head h2{font-family:var(--display); font-weight:600; font-size:25px;}
+  .section-head p.sub{font-size:14px; color:var(--muted); margin-top:6px; max-width:520px;}
+  .section-head .more-link{font-size:13px; font-weight:700; color:var(--emerald-dark); display:inline-flex; align-items:center; gap:6px; white-space:nowrap;}
+  .section-head .more-link svg{width:14px; height:14px;}
+
+  /* ---------- STATS STRIP ---------- */
+  .stats-strip{display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+  @media (max-width:760px){ .stats-strip{grid-template-columns:repeat(2,1fr);} }
+  .stat-item{padding:26px 20px; text-align:center; border-left:1px solid var(--line);}
+  .stat-item:first-child{border-left:none;}
+  @media (max-width:760px){ .stat-item:nth-child(odd){border-left:none;} .stat-item:nth-child(n+3){border-top:1px solid var(--line);} }
+  .stat-item b{display:block; font-family:var(--display); font-size:28px; font-weight:700; color:var(--emerald-dark);}
+  .stat-item span{font-size:12px; color:var(--muted-2); font-family:var(--mono); letter-spacing:.04em;}
+
+  /* ---------- SHOP BY CATEGORY ---------- */
+  .tile-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media (max-width:860px){ .tile-grid{grid-template-columns:repeat(2,1fr);} }
+  .tile{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px;
+    padding:26px 20px; text-align:center; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    cursor:pointer;
+  }
+  .tile:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(28,26,23,0.08); border-color:var(--panel-2);}
+  .tile .icon-wrap{
+    width:64px; height:64px; margin:0 auto 16px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--tint, #eef2ee);
+  }
+  .tile .icon-wrap svg{width:30px; height:30px;}
+  .tile h3{font-family:var(--display); font-size:16px; font-weight:600; margin-bottom:4px;}
+  .tile p{font-size:12.5px; color:var(--muted-2);}
+
+  /* ---------- SHOP LAYOUT: FILTERS + GRID ---------- */
+  .shop{display:grid; grid-template-columns:250px 1fr; gap:34px; align-items:start;}
+  @media (max-width:900px){ .shop{grid-template-columns:1fr;} }
+
+  .filters{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:24px;
+    position:sticky; top:150px;
+  }
+  @media (max-width:900px){ .filters{position:static;} }
+  .filters h4{font-size:13px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; margin-bottom:16px; color:var(--ink);}
+  .filter-group{margin-bottom:26px; padding-bottom:22px; border-bottom:1px solid var(--line);}
+  .filter-group:last-child{border-bottom:none; margin-bottom:0;}
+  .filter-group h5{font-size:13px; font-weight:700; margin-bottom:14px;}
+  .filter-row{display:flex; align-items:center; gap:9px; margin-bottom:11px; font-size:13.5px; color:var(--muted); cursor:pointer;}
+  .filter-row input[type=checkbox]{width:15px; height:15px; accent-color:var(--emerald-dark); cursor:pointer;}
+  .filter-row .count{margin-left:auto; color:var(--muted-2); font-size:12px;}
+  .price-inputs{display:flex; align-items:center; gap:8px; margin-bottom:10px;}
+  .price-inputs input{
+    width:100%; padding:8px 10px; border:1px solid var(--line); border-radius:3px; font-size:13px;
+  }
+  .apply-price{
+    width:100%; padding:9px; border:1px solid var(--emerald-dark); color:var(--emerald-dark);
+    border-radius:3px; font-size:12.5px; font-weight:700; transition:background .2s ease, color .2s ease;
+  }
+  .apply-price:hover{background:var(--emerald-dark); color:#fff;}
+  .clear-btn{font-size:12.5px; font-weight:700; color:var(--ruby);}
+
+  .toolbar{display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; flex-wrap:wrap; gap:12px;}
+  .result-count{font-size:13.5px; color:var(--muted);}
+  .sort{display:flex; align-items:center; gap:10px; font-size:13.5px;}
+  .sort select{padding:9px 14px; border:1px solid var(--line); border-radius:3px; background:#fff; color:var(--ink);}
+
+  .prod-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:760px){ .prod-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .prod-grid{grid-template-columns:1fr;} }
+
+  .prod-card{
+    border:1px solid var(--line); border-radius:6px; overflow:hidden; background:#fff;
+    transition:box-shadow .3s ease, transform .3s ease, opacity .25s ease; position:relative;
+  }
+  .prod-card:hover{box-shadow:0 18px 34px rgba(28,26,23,0.10); transform:translateY(-4px);}
+  .prod-card.fade-out{opacity:0; transform:scale(.96);}
+  .prod-media{
+    height:210px; background:
+      radial-gradient(circle at 32% 26%, rgba(255,255,255,0.9), transparent 46%),
+      var(--panel);
+    position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .prod-media svg.gem{width:88px; height:88px; transition:transform .4s ease;}
+  .prod-card:hover .prod-media svg.gem{transform:scale(1.08) rotate(-3deg);}
+  .sparkle{position:absolute; width:20px; height:20px; color:var(--gold-soft); opacity:.55; transition:opacity .3s ease, transform .5s ease;}
+  .sp1{top:22px; left:34%;}
+  .sp2{bottom:34px; right:26%; width:12px; height:12px; opacity:.35;}
+  .prod-card:hover .sparkle{opacity:1; transform:scale(1.2) rotate(20deg);}
+  .wish-btn{
+    position:absolute; top:12px; right:12px; width:32px; height:32px; border-radius:50%;
+    background:#fff; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08); color:var(--muted); z-index:2;
+    transition:color .2s ease, transform .2s ease;
+  }
+  .wish-btn:hover{color:var(--ruby);}
+  .wish-btn.active{color:var(--ruby);}
+  .wish-btn.active svg{fill:var(--ruby);}
+  .wish-btn.bump{animation:bump .3s ease;}
+  .wish-btn svg{width:15px; height:15px;}
+  .discount-tag{
+    position:absolute; top:12px; left:12px; background:var(--ruby); color:#fff;
+    font-size:11px; font-weight:700; padding:5px 9px; border-radius:3px; z-index:2;
+  }
+  .cert-tag{
+    position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.92);
+    font-family:var(--mono); font-size:9.5px; letter-spacing:.05em; text-transform:uppercase;
+    padding:4px 8px; border-radius:3px; color:var(--emerald-dark); border:1px solid var(--line); z-index:2;
+  }
+  .quick-add{
+    position:absolute; left:0; right:0; bottom:0; background:var(--ink); color:#fff;
+    font-size:12.5px; font-weight:700; text-align:center; padding:11px 0;
+    transform:translateY(100%); transition:transform .3s ease, background .2s ease; z-index:2;
+  }
+  .quick-add:hover{background:var(--emerald-dark);}
+  .prod-card:hover .quick-add{transform:translateY(0);}
+
+  .prod-info{padding:16px 16px 18px;}
+  .prod-info .cat{font-size:11px; color:var(--muted-2); text-transform:uppercase; letter-spacing:.05em; margin-bottom:5px;}
+  .prod-info .name{font-family:var(--display); font-size:16.5px; font-weight:600; margin-bottom:5px;}
+  .prod-info .spec{font-family:var(--mono); font-size:11px; color:var(--muted-2); margin-bottom:9px;}
+  .rating{display:flex; align-items:center; gap:6px; margin-bottom:10px;}
+  .rating .stars{color:var(--gold-soft); font-size:12.5px; letter-spacing:1px;}
+  .rating span{font-size:11.5px; color:var(--muted-2);}
+  .price-row{display:flex; align-items:baseline; gap:8px;}
+  .price-now{font-family:var(--display); font-size:17px; font-weight:700; color:var(--ink);}
+  .price-old{font-size:12.5px; color:var(--muted-2); text-decoration:line-through;}
+  .no-results{display:none; text-align:center; padding:60px 20px; color:var(--muted); grid-column:1/-1;}
+  .no-results.show{display:block;}
+  .no-results svg{width:40px; height:40px; margin:0 auto 14px; color:var(--muted-2);}
+
+  .load-more{text-align:center; margin-top:38px;}
+  .btn-outline{
+    display:inline-block; padding:13px 30px; border:1.5px solid var(--ink); border-radius:3px;
+    font-size:13.5px; font-weight:700; transition:background .2s ease, color .2s ease;
+  }
+  .btn-outline:hover{background:var(--ink); color:#fff;}
+  .btn-outline:disabled{opacity:.45; cursor:default;}
+  .btn-outline:disabled:hover{background:none; color:var(--ink);}
+
+  /* ---------- USP ---------- */
+  .usp-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+  @media (max-width:860px){ .usp-grid{grid-template-columns:repeat(2,1fr);} }
+  .usp-item{background:#fff; padding:32px 26px;}
+  .usp-item .icon-c{width:40px; height:40px; margin-bottom:16px; color:var(--emerald-dark);}
+  .usp-item h3{font-family:var(--display); font-size:17.5px; font-weight:600; margin-bottom:8px;}
+  .usp-item p{font-size:13.5px; color:var(--muted);}
+
+  /* ---------- BULK BANNER ---------- */
+  .bulk{
+    background:var(--panel); border:1px solid var(--line); border-radius:8px;
+    padding:48px; display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center;
+  }
+  @media (max-width:860px){ .bulk{grid-template-columns:1fr; padding:34px 24px;} }
+  .bulk .tag-label{
+    font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:12px; display:block;
+  }
+  .bulk h2{font-family:var(--display); font-weight:600; font-size:clamp(24px,3vw,32px); margin-bottom:14px;}
+  .bulk p{color:var(--muted); margin-bottom:22px; max-width:420px; font-size:14.5px;}
+  .bulk-points{display:flex; flex-direction:column; gap:10px;}
+  .bulk-points div{display:flex; align-items:center; gap:9px; font-size:13.5px;}
+  .bulk-points svg{width:15px; height:15px; color:var(--emerald-dark); flex-shrink:0;}
+
+  .enquiry-card{background:#fff; border:1px solid var(--line); border-radius:6px; padding:28px; min-height:394px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block; font-size:12px; color:var(--muted); margin-bottom:6px; font-weight:600;}
+  .field input, .field select{
+    width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:3px;
+    font-size:13.5px; color:var(--ink); background:var(--ivory);
+  }
+  .field input:focus, .field select:focus{outline:none; border-color:var(--emerald-dark);}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .submit-btn{
+    width:100%; padding:13px; background:var(--emerald-dark); color:#fff; font-weight:700;
+    font-size:13.5px; border-radius:3px; margin-top:6px; transition:background .2s ease;
+  }
+  .submit-btn:hover{background:var(--emerald);}
+  .success-panel{display:none; text-align:center; padding:36px 10px;}
+  .success-panel.show{display:block;}
+  .success-panel .tick{
+    width:52px; height:52px; border-radius:50%; background:#e6f3ee; color:var(--emerald-dark);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 16px;
+  }
+  .success-panel .tick svg{width:26px; height:26px;}
+  .success-panel h3{font-family:var(--display); font-size:19px; margin-bottom:8px;}
+  .success-panel p{font-size:13.5px; color:var(--muted); margin-bottom:18px;}
+  .success-panel button{font-size:12.5px; font-weight:700; color:var(--emerald-dark); text-decoration:underline;}
+  .enquiry-form.hidden{display:none;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:900px){ .testi-grid{grid-template-columns:1fr;} }
+  .testi-card{background:var(--panel); border:1px solid var(--line); padding:28px; border-radius:6px;}
+  .testi-card .stars{color:var(--gold-soft); font-size:14px; margin-bottom:14px; letter-spacing:2px;}
+  .testi-card p{font-size:14.5px; color:var(--ink); margin-bottom:20px; font-style:italic; font-family:var(--display); font-weight:400; line-height:1.5;}
+  .testi-who{display:flex; align-items:center; gap:12px;}
+  .avatar{width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-weight:700; font-size:14px; color:#fff; flex-shrink:0;}
+  .testi-who .name{font-size:13.5px; font-weight:700;}
+  .testi-who .loc{font-size:12px; color:var(--muted-2);}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:left; padding:20px 4px; display:flex; align-items:center; justify-content:space-between;
+    font-size:15px; font-weight:700; gap:16px;
+  }
+  .faq-q svg{width:18px; height:18px; color:var(--emerald-dark); flex-shrink:0; transition:transform .3s ease;}
+  .faq-item.open .faq-q svg{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+  .faq-a p{padding:0 4px 20px; font-size:14px; color:var(--muted); max-width:640px;}
+
+  /* ---------- NEWSLETTER ---------- */
+  .newsletter{
+    background:var(--emerald-dark); border-radius:10px; padding:44px 48px; color:#fff;
+    display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+  }
+  .newsletter h3{font-family:var(--display); font-size:22px; font-weight:600; margin-bottom:6px;}
+  .newsletter p{color:#cfe3da; font-size:13.5px;}
+  .newsletter-form{display:flex; gap:10px; flex-wrap:wrap;}
+  .newsletter-form input{
+    padding:12px 16px; border-radius:3px; border:1px solid rgba(255,255,255,0.25); background:rgba(255,255,255,0.08);
+    color:#fff; font-size:13.5px; min-width:230px;
+  }
+  .newsletter-form input::placeholder{color:#bcd6cb;}
+  .newsletter-form button{
+    background:var(--gold-soft); color:#241a02; font-weight:700; padding:12px 22px; border-radius:3px; font-size:13.5px;
+    transition:background .2s ease;
+  }
+  .newsletter-form button:hover{background:#e0b647;}
+  .newsletter-msg{font-size:13px; color:#c9f0da; display:none;}
+  .newsletter-msg.show{display:block;}
+  @media (max-width:760px){ .newsletter{padding:32px 26px;} }
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line); background:var(--panel); padding:52px 0 24px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px; margin-bottom:36px;}
+  @media (max-width:860px){ .foot-grid{grid-template-columns:1fr 1fr; row-gap:30px;} }
+  .foot-brand .logo{margin-bottom:14px;}
+  .foot-brand p{color:var(--muted); font-size:13.5px; max-width:270px;}
+  .foot-col h4{font-size:12px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--muted-2); margin-bottom:14px;}
+  .foot-col ul li{margin-bottom:10px;}
+  .foot-col a{font-size:13.5px; color:var(--muted); transition:color .2s ease;}
+  .foot-col a:hover{color:var(--emerald-dark);}
+  .pay-icons{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;}
+  .pay-icons span{
+    font-family:var(--mono); font-size:10px; border:1px solid var(--line); padding:5px 9px;
+    border-radius:3px; color:var(--muted);
+  }
+  .foot-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:var(--muted-2);
+  }
+
+  .reveal{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="gem-shape" viewBox="0 0 100 100">
+      <polygon points="50,4 78,22 92,50 78,80 50,96 22,80 8,50 22,22" opacity="1"/>
+      <polygon points="50,4 78,22 50,38 22,22" opacity="0.55"/>
+      <polygon points="78,22 92,50 50,38" opacity="0.78"/>
+      <polygon points="92,50 78,80 50,38" opacity="0.42"/>
+      <polygon points="78,80 50,96 50,38" opacity="0.62"/>
+      <polygon points="50,96 22,80 50,38" opacity="0.32"/>
+      <polygon points="22,80 8,50 50,38" opacity="0.58"/>
+      <polygon points="8,50 22,22 50,38" opacity="0.72"/>
+      <polygon points="50,4 78,22 50,38 22,22" fill="#ffffff" opacity="0.22"/>
+    </symbol>
+    <symbol id="sparkle-shape" viewBox="0 0 24 24">
+      <path d="M12 2 L13.8 9.2 21 12 13.8 14.8 12 22 10.2 14.8 3 12 10.2 9.2 Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span id="toastMsg">Added to cart</span></div>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span>📞 <a href="tel:7223026011">+91 72230 26011</a> <span class="hide-sm">&nbsp;|&nbsp; Certified &amp; Lab-Tested Gemstones</span></span>
+    <span class="hide-sm">Free insured shipping across India</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="#" class="logo">
+      <svg class="mark" viewBox="0 0 100 100" fill="var(--emerald-dark)"><use href="#gem-shape"/></svg>
+      NAVRATNA
+    </a>
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search gemstones, crystals, rudraksha...">
+    </div>
+    <nav class="header-nav" id="headerNav">
+      <a href="#shop" data-nav="shop" class="active">Shop</a>
+      <a href="#categories" data-nav="categories">Categories</a>
+      <a href="#bulk" data-nav="bulk">Bulk Orders</a>
+      <a href="#faq" data-nav="faq">FAQ</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <div class="header-icons">
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="icon-btn" id="wishlistIcon" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <span class="badge" id="wishlistBadge" style="display:none;">0</span>
+      </button>
+      <button class="icon-btn" id="cartIcon" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="badge" id="cartBadge" style="display:none;">0</span>
+      </button>
+    </div>
+  </div>
+  <!-- <div class="cat-strip">
+    <div class="wrap cat-strip-inner" id="chipStrip">
+      <a href="#shop" class="chip active" data-category="All Products">All Products</a>
+      <a href="#shop" class="chip" data-category="Precious Gemstones">Precious Gemstones</a>
+      <a href="#shop" class="chip" data-category="Semi-Precious Stones">Semi-Precious Stones</a>
+      <a href="#shop" class="chip" data-category="Healing Crystals">Healing Crystals</a>
+      <a href="#shop" class="chip" data-category="Rudraksha">Rudraksha</a>
+    </div>
+  </div> -->
+</header>
+
+<main>
+  <!-- HERO BANNER -->
+  <section class="hero wrap">
+    <div class="hero-banner">
+      <div>
+        <div class="eyebrow">Limited Time Offer</div>
+        <h1>Certified Rudraksha &amp; Gemstones — up to 20% off</h1>
+        <p>Genuine, lab-certified stones sourced directly from source. Shop retail or request a wholesale quotation for bulk requirements.</p>
+        <div class="countdown" id="countdown">
+          <div><b id="cd-h">00</b><span>Hours</span></div>
+          <div><b id="cd-m">00</b><span>Mins</span></div>
+          <div><b id="cd-s">00</b><span>Secs</span></div>
+        </div>
+        <a href="#shop" class="btn-white">Shop the Collection
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-gems" aria-hidden="true">
+        <svg class="hg1" viewBox="0 0 100 100" fill="#f0d27a"><use href="#gem-shape"/></svg>
+        <svg class="hg2" viewBox="0 0 100 100" fill="#e5577e"><use href="#gem-shape"/></svg>
+        <svg class="hg3" viewBox="0 0 100 100" fill="#ffffff" opacity="0.85"><use href="#gem-shape"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section wrap reveal" style="padding-bottom:0;">
+    <div class="stats-strip">
+      <div class="stat-item"><b>12,000+</b><span>STONES SOLD</span></div>
+      <div class="stat-item"><b>98.6%</b><span>CERTIFIED PURITY</span></div>
+      <div class="stat-item"><b>4.8/5</b><span>CUSTOMER RATING</span></div>
+      <div class="stat-item"><b>500+</b><span>BULK CLIENTS SERVED</span></div>
+    </div>
+  </section>
+
+  <!-- SHOP BY CATEGORY -->
+  <section class="section wrap reveal" id="categories">
+    <div class="section-head">
+      <div><h2>Shop by Category</h2><p class="sub">From astrological precious gemstones to everyday healing crystals — each category graded and certified.</p></div>
+      <a href="#shop" class="more-link">View all <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="tile-grid">
+      <a href="#shop" class="tile" data-category="Precious Gemstones">
+        <div class="icon-wrap" style="--tint:#fbe8ec"><svg viewBox="0 0 100 100" fill="#9c2540"><use href="#gem-shape"/></svg></div>
+        <h3>Precious Gemstones</h3>
+        <p>Ruby, Emerald, Sapphire &amp; more</p>
+      </a>
+      <a href="#shop" class="tile" data-category="Semi-Precious Stones">
+        <div class="icon-wrap" style="--tint:#e9eef7"><svg viewBox="0 0 100 100" fill="#2b558f"><use href="#gem-shape"/></svg></div>
+        <h3>Semi-Precious Stones</h3>
+        <p>Amethyst, Citrine, Topaz &amp; more</p>
+      </a>
+      <a href="#shop" class="tile" data-category="Healing Crystals">
+        <div class="icon-wrap" style="--tint:#e8f3ee"><svg viewBox="0 0 100 100" fill="#0f5c46"><use href="#gem-shape"/></svg></div>
+        <h3>Healing Crystals</h3>
+        <p>Quartz, Tiger Eye, Selenite &amp; more</p>
+      </a>
+      <a href="#shop" class="tile" data-category="Rudraksha">
+        <div class="icon-wrap" style="--tint:#faf1e0"><svg viewBox="0 0 100 100" fill="#a8791a"><use href="#gem-shape"/></svg></div>
+        <h3>Rudraksha</h3>
+        <p>1 Mukhi to 14 Mukhi beads &amp; malas</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- SHOP: FILTERS + PRODUCT GRID -->
+  <section class="section wrap reveal" id="shop">
+    <div class="section-head">
+      <h2>All Products</h2>
+    </div>
+    <div class="shop">
+      <aside class="filters">
+        <h4>Filter</h4>
+        <div class="filter-group">
+          <h5>Category</h5>
+          <label class="filter-row"><input type="checkbox" class="cat-check" value="Precious Gemstones"> Precious Gemstones <span class="count">42</span></label>
+          <label class="filter-row"><input type="checkbox" class="cat-check" value="Semi-Precious Stones"> Semi-Precious Stones <span class="count">31</span></label>
+          <label class="filter-row"><input type="checkbox" class="cat-check" value="Healing Crystals"> Healing Crystals <span class="count">27</span></label>
+          <label class="filter-row"><input type="checkbox" class="cat-check" value="Rudraksha"> Rudraksha <span class="count">19</span></label>
+        </div>
+        <div class="filter-group">
+          <h5>Price Range</h5>
+          <div class="price-inputs">
+            <input type="text" id="minPrice" placeholder="Min ₹">
+            <span>–</span>
+            <input type="text" id="maxPrice" placeholder="Max ₹">
+          </div>
+          <button class="apply-price" id="applyPrice">Apply</button>
+        </div>
+        <div class="filter-group">
+          <h5>Customer Rating</h5>
+          <label class="filter-row"><input type="checkbox" class="rating-check" value="4"> 4★ &amp; above <span class="count">64</span></label>
+          <label class="filter-row"><input type="checkbox" class="rating-check" value="3"> 3★ &amp; above <span class="count">88</span></label>
+        </div>
+        <button class="clear-btn" id="clearFilters">Clear all filters</button>
+      </aside>
+
+      <div>
+        <div class="toolbar">
+          <div class="result-count" id="resultCount">Showing 6 of 12 products</div>
+          <div class="sort">
+            Sort by
+            <select id="sortSelect">
+              <option value="popularity">Popularity</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="prod-grid" id="prodGrid">
+          <!-- Product 1 -->
+          <div class="prod-card" data-category="Precious Gemstones" data-price="18500" data-rating="4.9" data-order="1">
+            <div class="prod-media">
+              <span class="discount-tag">-15%</span>
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#9c2540"><use href="#gem-shape"/></svg>
+              <span class="cert-tag">IGI Certified</span>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Precious Gemstone</div>
+              <div class="name">Burmese Ruby (Manik)</div>
+              <div class="spec">4.25 CARAT · UNHEATED</div>
+              <div class="rating"><span class="stars">★★★★★</span><span>4.9 (128)</span></div>
+              <div class="price-row"><span class="price-now">₹18,500</span><span class="price-old">₹21,800</span></div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="prod-card" data-category="Precious Gemstones" data-price="22000" data-rating="4.8" data-order="2">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#0f5c46"><use href="#gem-shape"/></svg>
+              <span class="cert-tag">GJEPC Certified</span>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Precious Gemstone</div>
+              <div class="name">Zambian Emerald (Panna)</div>
+              <div class="spec">3.80 CARAT · NATURAL</div>
+              <div class="rating"><span class="stars">★★★★★</span><span>4.8 (94)</span></div>
+              <div class="price-row"><span class="price-now">₹22,000</span></div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="prod-card" data-category="Precious Gemstones" data-price="31200" data-rating="4.9" data-order="3">
+            <div class="prod-media">
+              <span class="discount-tag">-10%</span>
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#2b558f"><use href="#gem-shape"/></svg>
+              <span class="cert-tag">IGI Certified</span>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Precious Gemstone</div>
+              <div class="name">Ceylon Blue Sapphire (Neelam)</div>
+              <div class="spec">5.10 CARAT · NATURAL</div>
+              <div class="rating"><span class="stars">★★★★★</span><span>4.9 (151)</span></div>
+              <div class="price-row"><span class="price-now">₹31,200</span><span class="price-old">₹34,700</span></div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="prod-card" data-category="Rudraksha" data-price="1450" data-rating="4.9" data-order="4">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#a8791a"><use href="#gem-shape"/></svg>
+              <span class="cert-tag">Nepal Origin</span>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Rudraksha</div>
+              <div class="name">5 Mukhi Rudraksha Mala</div>
+              <div class="spec">108 BEADS · CERTIFIED</div>
+              <div class="rating"><span class="stars">★★★★★</span><span>4.9 (276)</span></div>
+              <div class="price-row"><span class="price-now">₹1,450</span></div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="prod-card" data-category="Healing Crystals" data-price="2100" data-rating="4.4" data-order="5">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#8e6bd8"><use href="#gem-shape"/></svg>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Healing Crystal</div>
+              <div class="name">Raw Amethyst Cluster</div>
+              <div class="spec">MEDIUM · 400–500G</div>
+              <div class="rating"><span class="stars">★★★★☆</span><span>4.4 (63)</span></div>
+              <div class="price-row"><span class="price-now">₹2,100</span></div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="prod-card" data-category="Semi-Precious Stones" data-price="3650" data-rating="4.8" data-order="6">
+            <div class="prod-media">
+              <span class="discount-tag">NEW</span>
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#d88a4a"><use href="#gem-shape"/></svg>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Semi-Precious Stone</div>
+              <div class="name">Citrine Pendant, Silver</div>
+              <div class="spec">2.4 CARAT · 92.5 SILVER</div>
+              <div class="rating"><span class="stars">★★★★★</span><span>4.8 (41)</span></div>
+              <div class="price-row"><span class="price-now">₹3,650</span></div>
+            </div>
+          </div>
+
+          <!-- Product 7 (hidden, load more) -->
+          <div class="prod-card" data-category="Precious Gemstones" data-price="15800" data-rating="4.7" data-order="7" data-extra="true" style="display:none;">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#c99a2e"><use href="#gem-shape"/></svg>
+              <span class="cert-tag">IGI Certified</span>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Precious Gemstone</div>
+              <div class="name">Yellow Sapphire (Pukhraj)</div>
+              <div class="spec">4.10 CARAT · NATURAL</div>
+              <div class="rating"><span class="stars">★★★★★</span><span>4.7 (76)</span></div>
+              <div class="price-row"><span class="price-now">₹15,800</span></div>
+            </div>
+          </div>
+
+          <!-- Product 8 (hidden, load more) -->
+          <div class="prod-card" data-category="Precious Gemstones" data-price="9400" data-rating="4.6" data-order="8" data-extra="true" style="display:none;">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#efe6d8"><use href="#gem-shape"/></svg>
+              <span class="cert-tag">Certified</span>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Precious Gemstone</div>
+              <div class="name">Basra Pearl (Moti)</div>
+              <div class="spec">6.2 RATTI · NATURAL</div>
+              <div class="rating"><span class="stars">★★★★☆</span><span>4.6 (52)</span></div>
+              <div class="price-row"><span class="price-now">₹9,400</span></div>
+            </div>
+          </div>
+
+          <!-- Product 9 (hidden, load more) -->
+          <div class="prod-card" data-category="Healing Crystals" data-price="1850" data-rating="4.7" data-order="9" data-extra="true" style="display:none;">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#e79fb0"><use href="#gem-shape"/></svg>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Healing Crystal</div>
+              <div class="name">Rose Quartz Sphere</div>
+              <div class="spec">65MM · POLISHED</div>
+              <div class="rating"><span class="stars">★★★★★</span><span>4.7 (88)</span></div>
+              <div class="price-row"><span class="price-now">₹1,850</span></div>
+            </div>
+          </div>
+
+          <!-- Product 10 (hidden, load more) -->
+          <div class="prod-card" data-category="Semi-Precious Stones" data-price="1250" data-rating="4.5" data-order="10" data-extra="true" style="display:none;">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#3f9d9d"><use href="#gem-shape"/></svg>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Semi-Precious Stone</div>
+              <div class="name">Turquoise Bracelet</div>
+              <div class="spec">8MM BEADS · NATURAL</div>
+              <div class="rating"><span class="stars">★★★★☆</span><span>4.5 (37)</span></div>
+              <div class="price-row"><span class="price-now">₹1,250</span></div>
+            </div>
+          </div>
+
+          <!-- Product 11 (hidden, load more) -->
+          <div class="prod-card" data-category="Rudraksha" data-price="6200" data-rating="4.9" data-order="11" data-extra="true" style="display:none;">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#8a6300"><use href="#gem-shape"/></svg>
+              <span class="cert-tag">Nepal Origin</span>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Rudraksha</div>
+              <div class="name">1 Mukhi Rudraksha</div>
+              <div class="spec">SINGLE BEAD · RARE</div>
+              <div class="rating"><span class="stars">★★★★★</span><span>4.9 (19)</span></div>
+              <div class="price-row"><span class="price-now">₹6,200</span></div>
+            </div>
+          </div>
+
+          <!-- Product 12 (hidden, load more) -->
+          <div class="prod-card" data-category="Rudraksha" data-price="950" data-rating="4.6" data-order="12" data-extra="true" style="display:none;">
+            <div class="prod-media">
+              <button class="wish-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
+              <svg class="sparkle sp1" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="sparkle sp2" viewBox="0 0 24 24"><use href="#sparkle-shape"/></svg>
+              <svg class="gem" viewBox="0 0 100 100" fill="#a8791a"><use href="#gem-shape"/></svg>
+              <span class="cert-tag">Nepal Origin</span>
+              <button class="quick-add">Add to Cart</button>
+            </div>
+            <div class="prod-info">
+              <div class="cat">Rudraksha</div>
+              <div class="name">7 Mukhi Rudraksha Bracelet</div>
+              <div class="spec">ADJUSTABLE · CERTIFIED</div>
+              <div class="rating"><span class="stars">★★★★☆</span><span>4.6 (64)</span></div>
+              <div class="price-row"><span class="price-now">₹950</span></div>
+            </div>
+          </div>
+
+          <div class="no-results" id="noResults">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <p>No products match your filters. Try clearing some filters.</p>
+          </div>
+        </div>
+
+        <div class="load-more"><button class="btn-outline" id="loadMoreBtn">Load More Products</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP -->
+  <section class="section wrap reveal">
+    <div class="section-head">
+      <h2>Why Navratna</h2>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-item">
+        <svg class="icon-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.3L21 9.3l-4.6 4.6L17.5 21 12 17.8 6.5 21l1.1-7.1L3 9.3l6.1-1z"/></svg>
+        <h3>Certified &amp; Lab Tested</h3>
+        <p>Every gemstone ships with independent lab certification confirming origin and treatment.</p>
+      </div>
+      <div class="usp-item">
+        <svg class="icon-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l3-9 3 9-3 9z"/><path d="M15 12l3-9 3 9-3 9z"/><path d="M6 12h12"/></svg>
+        <h3>Direct From Source</h3>
+        <p>No middlemen — sourced directly from mines and trusted cutters, passed on at fair prices.</p>
+      </div>
+      <div class="usp-item">
+        <svg class="icon-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        <h3>Custom Bulk Orders</h3>
+        <p>Wholesale buyers get tailored quotations built around quantity, budget and product mix.</p>
+      </div>
+      <div class="usp-item">
+        <svg class="icon-c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        <h3>Secure Payments</h3>
+        <p>Checkout safely with UPI, cards, net banking and wallets, powered by Razorpay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BULK -->
+  <section class="section wrap reveal" id="bulk">
+    <div class="bulk">
+      <div>
+        <span class="tag-label">For Businesses</span>
+        <h2>Buying in bulk? Get a custom quotation.</h2>
+        <p>Tell us the product, quantity and your budget — our team will prepare a formal costing within 24 hours.</p>
+        <div class="bulk-points">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Tailored costing per requirement</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Direct line to our sourcing desk</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Pan-India delivery, insured</div>
+        </div>
+      </div>
+      <div class="enquiry-card">
+        <form class="enquiry-form" id="enquiryForm">
+          <div class="field-row">
+            <div class="field"><label>Full Name</label><input type="text" placeholder="Your name" required></div>
+            <div class="field"><label>Company</label><input type="text" placeholder="Business name"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Mobile</label><input type="text" placeholder="+91" required></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+          </div>
+          <div class="field"><label>Product Required</label>
+            <select><option>Precious Gemstones</option><option>Semi-Precious Stones</option><option>Healing Crystals</option><option>Rudraksha</option></select>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Quantity</label><input type="text" placeholder="e.g. 500 pcs"></div>
+            <div class="field"><label>Budget</label><input type="text" placeholder="e.g. ₹1,00,000"></div>
+          </div>
+          <button type="submit" class="submit-btn">Submit Requirement</button>
+        </form>
+        <div class="success-panel" id="successPanel">
+          <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3>Requirement received!</h3>
+          <p>Thank you — our sourcing team will get back to you with a formal quotation within 24 hours.</p>
+          <button id="submitAnother">Submit another requirement</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section wrap reveal">
+    <div class="section-head">
+      <h2>What our customers say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Ordered a certified Neelam for my father — the lab report matched perfectly and delivery was well packed."</p>
+        <div class="testi-who"><div class="avatar" style="background:#9c2540">A</div><div><div class="name">Ankit Verma</div><div class="loc">Indore</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"We buy Rudraksha malas in bulk for our store — the wholesale quotation process is fast and transparent."</p>
+        <div class="testi-who"><div class="avatar" style="background:#0f5c46">P</div><div><div class="name">Priya Sharma</div><div class="loc">Jaipur</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Genuine stones, fair pricing, and the checkout with Razorpay felt completely secure."</p>
+        <div class="testi-who"><div class="avatar" style="background:#2b558f">R</div><div><div class="name">Rohit Mandloi</div><div class="loc">Indore</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section wrap reveal" id="faq">
+    <div class="section-head" style="justify-content:center; text-align:center; flex-direction:column;">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Are your gemstones certified?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes, every precious and semi-precious gemstone ships with an independent lab certificate (IGI/GJEPC) confirming origin, weight and treatment.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does bulk/wholesale ordering work?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Submit your requirement through the Bulk Enquiry form with product, quantity and budget — our team reviews it and sends a formal quotation within 24 hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What payment methods do you accept?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>We accept UPI, credit/debit cards, net banking and wallets through Razorpay's secure checkout.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is your return policy?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>We offer a 7-day easy return window on all unused products in original packaging with certification intact.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you ship across India?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes, we offer free, fully insured shipping to all serviceable pin codes across India.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section wrap reveal" style="padding-top:0;">
+    <div class="newsletter">
+      <div>
+        <h3>Get early access to new arrivals</h3>
+        <p>Join our list for certified drops, festive offers and bulk-order discounts.</p>
+      </div>
+      <div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+          <button type="submit">Subscribe</button>
+        </form>
+        <div class="newsletter-msg" id="newsletterMsg">✓ Subscribed! Watch your inbox for updates.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo">
+          <svg class="mark" viewBox="0 0 100 100" fill="var(--emerald-dark)"><use href="#gem-shape"/></svg>
+          NAVRATNA
+        </a>
+        <p>Certified gemstones, healing crystals &amp; Rudraksha — retail and wholesale, sourced with trust.</p>
+        <div class="pay-icons"><span>UPI</span><span>Cards</span><span>Net Banking</span><span>Razorpay</span></div>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#shop" data-category="Precious Gemstones" class="chip-link">Precious Gemstones</a></li>
+          <li><a href="#shop" data-category="Semi-Precious Stones" class="chip-link">Semi-Precious Stones</a></li>
+          <li><a href="#shop" data-category="Healing Crystals" class="chip-link">Healing Crystals</a></li>
+          <li><a href="#shop" data-category="Rudraksha" class="chip-link">Rudraksha</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Business</h4>
+        <ul>
+          <li><a href="#bulk">Bulk Enquiry</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#">Returns &amp; Refunds</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:7223026011">+91 72230 26011</a></li>
+          <li><a href="#">Indore, Madhya Pradesh</a></li>
+          <li><a href="#">Mon–Sat, 10am–7pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Navratna Gemstones. All rights reserved.</span>
+      <span>Website by WhiteMirror Solution Pvt. Ltd.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---------- STATE ---------- */
+  const state = { category: 'All Products', search: '', minPrice: null, maxPrice: null, minRating: null, sort: 'popularity', showExtra: false };
+  const cards = Array.from(document.querySelectorAll('.prod-card'));
+  let cartCount = 0, wishCount = 0;
+
+  /* ---------- TOAST ---------- */
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  let toastTimer;
+  function showToast(msg){
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=> toast.classList.remove('show'), 2200);
+  }
+
+  /* ---------- FILTER + SORT + RENDER ---------- */
+  function applyFilters(){
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const isExtra = card.dataset.extra === 'true';
+      const cat = card.dataset.category;
+      const price = parseFloat(card.dataset.price);
+      const rating = parseFloat(card.dataset.rating);
+      const name = card.querySelector('.name').textContent.toLowerCase();
+
+      let visible = true;
+      if (isExtra && !state.showExtra) visible = false;
+      if (state.category !== 'All Products' && cat !== state.category) visible = false;
+      if (state.search && !name.includes(state.search)) visible = false;
+      if (state.minPrice !== null && price < state.minPrice) visible = false;
+      if (state.maxPrice !== null && price > state.maxPrice) visible = false;
+      if (state.minRating !== null && rating < state.minRating) visible = false;
+
+      card.style.display = visible ? '' : 'none';
+      if (visible) visibleCount++;
+    });
+
+    // sort visible cards
+    const grid = document.getElementById('prodGrid');
+    const sorted = cards.slice().sort((a,b) => {
+      if (state.sort === 'price-low') return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+      if (state.sort === 'price-high') return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+      if (state.sort === 'rating') return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+      return parseInt(a.dataset.order) - parseInt(b.dataset.order);
+    });
+    sorted.forEach(card => grid.appendChild(card));
+    grid.appendChild(document.getElementById('noResults'));
+
+    const totalAvailable = state.showExtra ? cards.length : cards.filter(c => c.dataset.extra !== 'true').length;
+    document.getElementById('resultCount').textContent = `Showing ${visibleCount} of ${totalAvailable} products`;
+    document.getElementById('noResults').classList.toggle('show', visibleCount === 0);
+
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    if (state.showExtra){ loadMoreBtn.textContent = 'All products loaded'; loadMoreBtn.disabled = true; }
+  }
+
+  /* ---------- CATEGORY (chips, tiles, footer links) ---------- */
+  function setCategory(catName, scroll){
+    state.category = catName;
+    document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c.dataset.category === catName));
+    document.querySelectorAll('.cat-check').forEach(cb => { cb.checked = (cb.value === catName); });
+    applyFilters();
+    if (scroll){
+      document.getElementById('shop').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', (e) => { e.preventDefault(); setCategory(chip.dataset.category, false); });
+  });
+  document.querySelectorAll('.tile').forEach(tile => {
+    tile.addEventListener('click', (e) => { e.preventDefault(); setCategory(tile.dataset.category, true); });
+  });
+  document.querySelectorAll('.chip-link').forEach(link => {
+    link.addEventListener('click', (e) => { e.preventDefault(); setCategory(link.dataset.category, true); });
+  });
+  document.querySelectorAll('.cat-check').forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked){ setCategory(cb.value, false); }
+      else { setCategory('All Products', false); }
+    });
+  });
+
+  /* ---------- SEARCH ---------- */
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    state.search = e.target.value.trim().toLowerCase();
+    applyFilters();
+  });
+
+  /* ---------- PRICE FILTER ---------- */
+  document.getElementById('applyPrice').addEventListener('click', () => {
+    const min = parseFloat(document.getElementById('minPrice').value);
+    const max = parseFloat(document.getElementById('maxPrice').value);
+    state.minPrice = isNaN(min) ? null : min;
+    state.maxPrice = isNaN(max) ? null : max;
+    applyFilters();
+  });
+
+  /* ---------- RATING FILTER (single-select style) ---------- */
+  document.querySelectorAll('.rating-check').forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked){
+        document.querySelectorAll('.rating-check').forEach(o => { if (o !== cb) o.checked = false; });
+        state.minRating = parseFloat(cb.value);
+      } else {
+        state.minRating = null;
+      }
+      applyFilters();
+    });
+  });
+
+  /* ---------- CLEAR FILTERS ---------- */
+  document.getElementById('clearFilters').addEventListener('click', () => {
+    state.category = 'All Products'; state.search=''; state.minPrice=null; state.maxPrice=null; state.minRating=null; state.sort='popularity';
+    document.getElementById('searchInput').value='';
+    document.getElementById('minPrice').value=''; document.getElementById('maxPrice').value='';
+    document.getElementById('sortSelect').value='popularity';
+    document.querySelectorAll('.cat-check, .rating-check').forEach(cb => cb.checked = false);
+    document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c.dataset.category === 'All Products'));
+    applyFilters();
+  });
+
+  /* ---------- SORT ---------- */
+  document.getElementById('sortSelect').addEventListener('change', (e) => {
+    state.sort = e.target.value;
+    applyFilters();
+  });
+
+  /* ---------- LOAD MORE ---------- */
+  document.getElementById('loadMoreBtn').addEventListener('click', () => {
+    state.showExtra = true;
+    applyFilters();
+  });
+
+  /* ---------- WISHLIST ---------- */
+  const wishlistBadge = document.getElementById('wishlistBadge');
+  document.querySelectorAll('.wish-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const active = btn.classList.toggle('active');
+      btn.classList.add('bump');
+      setTimeout(()=> btn.classList.remove('bump'), 300);
+      wishCount += active ? 1 : -1;
+      wishlistBadge.textContent = wishCount;
+      wishlistBadge.style.display = wishCount > 0 ? 'flex' : 'none';
+      wishlistBadge.classList.add('bump');
+      setTimeout(()=> wishlistBadge.classList.remove('bump'), 350);
+      const name = btn.closest('.prod-card').querySelector('.name').textContent;
+      showToast(active ? `Added "${name}" to wishlist` : `Removed "${name}" from wishlist`);
+    });
+  });
+
+  /* ---------- ADD TO CART ---------- */
+  const cartBadge = document.getElementById('cartBadge');
+  document.querySelectorAll('.quick-add').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      cartCount++;
+      cartBadge.textContent = cartCount;
+      cartBadge.style.display = 'flex';
+      cartBadge.classList.add('bump');
+      setTimeout(()=> cartBadge.classList.remove('bump'), 350);
+      const name = btn.closest('.prod-card').querySelector('.name').textContent;
+      showToast(`Added "${name}" to cart`);
+    });
+  });
+
+  /* ---------- BULK ENQUIRY FORM ---------- */
+  document.getElementById('enquiryForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('enquiryForm').classList.add('hidden');
+    document.getElementById('successPanel').classList.add('show');
+  });
+  document.getElementById('submitAnother').addEventListener('click', () => {
+    document.getElementById('enquiryForm').reset();
+    document.getElementById('enquiryForm').classList.remove('hidden');
+    document.getElementById('successPanel').classList.remove('show');
+  });
+
+  /* ---------- NEWSLETTER ---------- */
+  document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('newsletterForm').style.display = 'none';
+    document.getElementById('newsletterMsg').classList.add('show');
+  });
+
+  /* ---------- FAQ ACCORDION ---------- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+      if (!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+
+  /* ---------- MOBILE NAV TOGGLE ---------- */
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('headerNav').classList.toggle('open');
+  });
+
+  /* ---------- NAV LINKS SMOOTH SCROLL + ACTIVE STATE ---------- */
+  document.querySelectorAll('.header-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('headerNav').classList.remove('open');
+    });
+  });
+  const navSections = ['shop','categories','bulk','faq','contact'].map(id => document.getElementById(id)).filter(Boolean);
+  const navLinks = document.querySelectorAll('.header-nav a');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        navLinks.forEach(l => l.classList.toggle('active', l.dataset.nav === entry.target.id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  navSections.forEach(sec => navObserver.observe(sec));
+
+  /* ---------- SCROLL REVEAL ---------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){ entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ---------- COUNTDOWN TIMER ---------- */
+  const endTime = Date.now() + (1000*60*60*29) + (1000*60*42);
+  function updateCountdown(){
+    const diff = Math.max(0, endTime - Date.now());
+    const h = Math.floor(diff / (1000*60*60));
+    const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const s = Math.floor((diff % (1000*60)) / 1000);
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  /* ---------- INITIAL RENDER ---------- */
+  applyFilters();
+</script>
+</body>
+</html>
